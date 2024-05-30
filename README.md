@@ -42,6 +42,27 @@ $ hexo generate
 $ hexo clean
 ```
 
+## [一鍵部屬](https://hexo.io/zh-tw/docs/github-pages#%E4%B8%80%E9%8D%B5%E9%83%A8%E5%B1%AC)
+- 以下教學改編自 [一鍵部署 .](https://hexo.io/docs/one-command-deployment)
+
+- 安裝 [hexo-deployer-git.](https://github.com/hexojs/hexo-deployer-git)
+```sh
+npm install hexo-deployer-git --save
+```
+
+- 清空 _config.yml 的現有資料，並新增以下組態:
+```sh
+deploy:
+  type: git
+  repo: https://github.com/<username>/<project>
+  # example, https://github.com/hexojs/hexojs.github.io
+  branch: gh-pages
+```
+- 執行 hexo clean && hexo deploy 。
+- 瀏覽 <GitHub 用戶名>.github.io 檢查你的網站能否運作。
+
+
+
 ## 常見問題
 
 ### Q：如何在文章中加入圖片
@@ -68,7 +89,28 @@ MacOS 使用 cmd + s，Windows 使用 ctrl + s
 
 **Note: 編譯完成的檔案會出現在 `/themes/hexschool/source/css/all.min.css`**
 
+### Q: Hexo d -g 指令錯誤 Deployer not found
+- 當在使用 hexo 建置屬於自己的 Blog 時，發生 `Deploy not found : git` 的解決方式
+
+- 解決方法: 由於缺少 hexo-deployer-git 套件，在當前目錄安裝套件即可
+
+```sh
+npm install hexo-deployer-git --save
+```
+
+- 接下來再使用 `hexo d -g` 就可以成功推送了！ 很簡單對巴~
+
+[參考來源](https://blog.csdn.net/qq_21808961/article/details/84476504)
+
+
 
 ## 更多資訊
 - [hexschool 主題相關設定與介紹](https://github.com/hexschool/2024-camp-hexo/blob/main/themes/hexschool/README.md)
 - [Hexo 相關指令](https://hexo.io/zh-tw/docs/commands)
+
+
+
+
+
+---
+

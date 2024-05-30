@@ -106,3 +106,5 @@ deploy:
   # example, https://github.com/hexojs/hexojs.github.io
   branch: gh-pages
   message : 'update'
+
+
