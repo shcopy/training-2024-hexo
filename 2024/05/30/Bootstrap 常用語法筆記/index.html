@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/training-2024-hexo/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/training-2024-hexo/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/training-2024-hexo/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/training-2024-hexo/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/training-2024-hexo/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"shcopy.github.io","root":"/training-2024-hexo/","images":"/training-2024-hexo/images","scheme":"Muse","darkmode":false,"version":"8.19.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/training-2024-hexo/js/config.js"></script>
+
+    <meta name="description" content="Bootstrap 常用語法筆記RWD 網頁寬度範圍   設計稿寬度 判斷範圍 CSS 設定寬度    &lt;&#x3D; 575px &lt;  575px auto   575px ~  768px &gt;  575px 540px   768px ~  992px &gt;  768px 720px   992px ~ 1200px &gt;  992px 960px   1200px">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bootstrap 常用語法筆記">
+<meta property="og:url" content="https://shcopy.github.io/training-2024-hexo/2024/05/30/Bootstrap%20%E5%B8%B8%E7%94%A8%E8%AA%9E%E6%B3%95%E7%AD%86%E8%A8%98/index.html">
+<meta property="og:site_name" content="KOBE 的部落格">
+<meta property="og:description" content="Bootstrap 常用語法筆記RWD 網頁寬度範圍   設計稿寬度 判斷範圍 CSS 設定寬度    &lt;&#x3D; 575px &lt;  575px auto   575px ~  768px &gt;  575px 540px   768px ~  992px &gt;  768px 720px   992px ~ 1200px &gt;  992px 960px   1200px">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2024-05-30T07:50:06.000Z">
+<meta property="article:modified_time" content="2024-05-30T08:03:11.648Z">
+<meta property="article:author" content="Kobe">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="bootstrap">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://shcopy.github.io/training-2024-hexo/2024/05/30/Bootstrap%20%E5%B8%B8%E7%94%A8%E8%AA%9E%E6%B3%95%E7%AD%86%E8%A8%98/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://shcopy.github.io/training-2024-hexo/2024/05/30/Bootstrap%20%E5%B8%B8%E7%94%A8%E8%AA%9E%E6%B3%95%E7%AD%86%E8%A8%98/","path":"2024/05/30/Bootstrap 常用語法筆記/","title":"Bootstrap 常用語法筆記"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Bootstrap 常用語法筆記 | KOBE 的部落格</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/training-2024-hexo/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/training-2024-hexo/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">KOBE 的部落格</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">這是 KOBE 分享技術的地方~</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Bootstrap-%E5%B8%B8%E7%94%A8%E8%AA%9E%E6%B3%95%E7%AD%86%E8%A8%98"><span class="nav-number">1.</span> <span class="nav-text">Bootstrap 常用語法筆記</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RWD-%E7%B6%B2%E9%A0%81%E5%AF%AC%E5%BA%A6%E7%AF%84%E5%9C%8D"><span class="nav-number">1.1.</span> <span class="nav-text">RWD 網頁寬度範圍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B6%B2%E6%A0%BC%E9%81%B8%E9%A0%85"><span class="nav-number">1.2.</span> <span class="nav-text">網格選項</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%95%8F%E8%88%87%E7%AD%94%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">問與答：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bootstrap-%E5%B7%A5%E5%85%B7%E5%85%83%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">Bootstrap 工具元件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%89%E9%88%95%E5%85%83%E4%BB%B6"><span class="nav-number">3.1.</span> <span class="nav-text">按鈕元件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%83%E4%BB%B6%E7%B5%84%E5%90%88%E8%A6%8F%E5%89%87"><span class="nav-number">3.2.</span> <span class="nav-text">元件組合規則</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%83%E4%BB%B6%E6%A8%A1%E7%B5%84%E5%A4%A7%E8%87%B4%E5%8C%85%E5%90%AB%E4%BB%A5%E4%B8%8B%E8%A6%8F%E5%89%87"><span class="nav-number">3.2.1.</span> <span class="nav-text">元件模組大致包含以下規則</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kobe</p>
+  <div class="site-description" itemprop="description">這是 KOBE 分享技術的地方，包含前端、後端、資料庫。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/training-2024-hexo/archives/">
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">標籤</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://shcopy.github.io/training-2024-hexo/2024/05/30/Bootstrap%20%E5%B8%B8%E7%94%A8%E8%AA%9E%E6%B3%95%E7%AD%86%E8%A8%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/training-2024-hexo/images/avatar.gif">
+      <meta itemprop="name" content="Kobe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KOBE 的部落格">
+      <meta itemprop="description" content="這是 KOBE 分享技術的地方，包含前端、後端、資料庫。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Bootstrap 常用語法筆記 | KOBE 的部落格">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Bootstrap 常用語法筆記
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2024-05-30 15:50:06 / 修改時間：16:03:11" itemprop="dateCreated datePublished" datetime="2024-05-30T15:50:06+08:00">2024-05-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="Bootstrap-常用語法筆記"><a href="#Bootstrap-常用語法筆記" class="headerlink" title="Bootstrap 常用語法筆記"></a>Bootstrap 常用語法筆記</h2><h3 id="RWD-網頁寬度範圍"><a href="#RWD-網頁寬度範圍" class="headerlink" title="RWD 網頁寬度範圍"></a>RWD 網頁寬度範圍</h3><table>
+<thead>
+<tr>
+<th>設計稿寬度</th>
+<th>判斷範圍</th>
+<th>CSS 設定寬度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt;&#x3D; 575px</td>
+<td>&lt;  575px</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>575px ~  768px</td>
+<td>&gt;  575px</td>
+<td>540px</td>
+</tr>
+<tr>
+<td>768px ~  992px</td>
+<td>&gt;  768px</td>
+<td>720px</td>
+</tr>
+<tr>
+<td>992px ~ 1200px</td>
+<td>&gt;  992px</td>
+<td>960px</td>
+</tr>
+<tr>
+<td>1200px ~ 1400px</td>
+<td>&gt; 1200px</td>
+<td>1140px</td>
+</tr>
+<tr>
+<td>1400px ~ n</td>
+<td>&gt; 1400px</td>
+<td>1320px</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="網格選項"><a href="#網格選項" class="headerlink" title="網格選項"></a>網格選項</h3><table>
+<thead>
+<tr>
+<th>Breakpoint</th>
+<th>Class infix</th>
+<th>Dimensions</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>X-Small</td>
+<td>None</td>
+<td>&lt;576px</td>
+</tr>
+<tr>
+<td>Small</td>
+<td>sm</td>
+<td>≥576px</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>md</td>
+<td>≥768px</td>
+</tr>
+<tr>
+<td>Large</td>
+<td>lg</td>
+<td>≥992px</td>
+</tr>
+<tr>
+<td>Extra large</td>
+<td>xl</td>
+<td>≥1200px</td>
+</tr>
+<tr>
+<td>Extra extra large</td>
+<td>xxl</td>
+<td>≥1400px</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Bootstrap 預設默認六個斷點（有時候會稱之為網格），主要用於建立響應式開發。如果您是使用我們的 Sass 原始碼，則可以自定義這些斷點。</li>
+</ul>
+<hr>
+<ol>
+<li>格線系統結構由外而內為 <code>.container, .row, .col-xx</code>。</li>
+<li><code>class=&quot;row&quot;</code> 內層建議使用 <code>class-&quot;col-xx&quot;</code> 避免增加其它的結構，將導致結構不穩定。</li>
+<li>最外層，在幫它補一個 <code>class=&quot;container&quot;、class=&quot;container-fluid&quot;</code>。</li>
+</ol>
+<ul>
+<li>範例 1：<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 對於網頁內容寬度的階段美感都很要求且需要最大寬度限制可用 container</span><br><span class="line">&lt;div class=<span class="string">&quot;container&quot;</span>&gt;</span><br><span class="line">    &lt;div class=<span class="string">&quot;row&quot;</span>&gt;</span><br><span class="line">        &lt;div class=<span class="string">&quot;col-xx&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;                            </span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></li>
+<li>範例 2：<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 如果網頁內容不需要嚴謹的定義最大寬度可以使用 container-fluid</span><br><span class="line">&lt;div class=<span class="string">&quot;container-fluid&quot;</span>&gt;</span><br><span class="line">    &lt;div class=<span class="string">&quot;row&quot;</span>&gt;</span><br><span class="line">        &lt;div class=<span class="string">&quot;col-xx&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;                            </span><br><span class="line">&lt;/div&gt;                                                   </span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h2 id="問與答："><a href="#問與答：" class="headerlink" title="問與答："></a>問與答：</h2><ol>
+<li><strong>Q:格線系統構構，何者為建議寫法?</strong> A: <code>.container &gt; .row &gt; .col-*</code></li>
+</ol>
+<ul>
+<li>範例：<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">&quot;container&quot;</span>&gt;</span><br><span class="line">    &lt;div class=<span class="string">&quot;row&quot;</span>&gt;</span><br><span class="line">        &lt;div class=<span class="string">&quot;col&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class=<span class="string">&quot;col&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class=<span class="string">&quot;col&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<ol start="2">
+<li><strong>Q: 格式系統中預設一列為幾欄?</strong>  A: 12 欄</li>
+<li><strong>Q: 使用三大欄的方式進行排列，需要用欄寬?</strong>  A: <code>.col-4</code></li>
+</ol>
+<ul>
+<li>範例：<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">&quot;container&quot;</span>&gt;</span><br><span class="line">    &lt;div class=<span class="string">&quot;row&quot;</span>&gt;</span><br><span class="line">        &lt;div class=<span class="string">&quot;col-4&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class=<span class="string">&quot;col-4&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class=<span class="string">&quot;col-4&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;  </span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<ol start="4">
+<li><strong>Q: 請問如果要行動版為單欄，桌面版（lg）為三大欄，請問該使用哪一組樣式套用在欄上?</strong><br>  A: <code>.col-lg-4</code></li>
+</ol>
+<ul>
+<li>範例：<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">&quot;container&quot;</span>&gt;</span><br><span class="line">    &lt;div class=<span class="string">&quot;row&quot;</span>&gt;</span><br><span class="line">        &lt;div class=<span class="string">&quot;col-lg-4&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class=<span class="string">&quot;col-lg-4&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class=<span class="string">&quot;col-lg-4&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt; </span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<ol start="5">
+<li><strong>呈現為”左右兩大欄”的結構範例</strong><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">&quot;row row-cols-2&quot;</span>&gt;</span><br><span class="line">     &lt;div class=<span class="string">&quot;col&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">	 &lt;div class=<span class="string">&quot;col&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">	 &lt;div class=<span class="string">&quot;col&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">   &lt;/div&gt;</span><br><span class="line">```  </span><br><span class="line">---</span><br><span class="line">6. **Q:如果要移除水平 gutter 的間距，.row 要套用哪一組樣式？**  </span><br><span class="line">   A: `<span class="string">&quot;gx-0&quot;</span> `</span><br><span class="line">```sh</span><br><span class="line">// 範例</span><br><span class="line">&lt;div class=<span class="string">&quot;row gx-0&quot;</span>&gt;</span><br><span class="line"> &lt;div class=<span class="string">&quot;col&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line"> &lt;div class=<span class="string">&quot;col&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line"> &lt;div class=<span class="string">&quot;col&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<ol start="7">
+<li><strong>Q: 請問 d-sm-flex 可以得到什麼樣的效果？</strong><br>A: 預設不改變, sm 以上的裝置套用 <code>display: flex</code></li>
+<li><strong>Q: 如果想要在 lg 尺寸以上顯示元素，lg 以下則是隱藏可以使用哪一個語法？</strong><br>A: <code>d-lg-block d-none</code></li>
+<li><strong>Q: 文字要靠右對齊，該使用哪一個 class 呢？</strong><br>A: <code>text-end</code></li>
+<li><strong>Q: 當連結要套用色彩，並使它在 hover 時也能套用色彩，會使用？</strong> A: <code>link-primary</code></li>
+</ol>
+<ul>
+<li>範例 : 連結顏色 (Colored links) Hover 狀態的彩色連結<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">&quot;#&quot;</span> class=<span class="string">&quot;link-primary&quot;</span>&gt;Primary <span class="built_in">link</span>&lt;/a&gt;</span><br><span class="line">&lt;a href=<span class="string">&quot;#&quot;</span> class=<span class="string">&quot;link-secondary&quot;</span>&gt;Secondary <span class="built_in">link</span>&lt;/a&gt;</span><br><span class="line">&lt;a href=<span class="string">&quot;#&quot;</span> class=<span class="string">&quot;link-success&quot;</span>&gt;Success <span class="built_in">link</span>&lt;/a&gt;</span><br><span class="line">&lt;a href=<span class="string">&quot;#&quot;</span> class=<span class="string">&quot;link-danger&quot;</span>&gt;Danger <span class="built_in">link</span>&lt;/a&gt;</span><br><span class="line">&lt;a href=<span class="string">&quot;#&quot;</span> class=<span class="string">&quot;link-warning&quot;</span>&gt;Warning <span class="built_in">link</span>&lt;/a&gt;</span><br><span class="line">&lt;a href=<span class="string">&quot;#&quot;</span> class=<span class="string">&quot;link-info&quot;</span>&gt;Info <span class="built_in">link</span>&lt;/a&gt;</span><br><span class="line">&lt;a href=<span class="string">&quot;#&quot;</span> class=<span class="string">&quot;link-light&quot;</span>&gt;Light <span class="built_in">link</span>&lt;/a&gt;</span><br><span class="line">&lt;a href=<span class="string">&quot;#&quot;</span> class=<span class="string">&quot;link-dark&quot;</span>&gt;Dark <span class="built_in">link</span>&lt;/a</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<ol start="11">
+<li><strong>Q: 外層為 display: flex 時，內層元素要做到交錯軸置中，會使用哪一個 class？</strong> A: <code>align-self-center</code></li>
+</ol>
+<ul>
+<li>範例: 在 bootstrap 環境可直接使用 <code>align-self-center</code><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">&quot;align-self-center&quot;</span>&gt;Aligned flex item&lt;/div&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h2 id="Bootstrap-工具元件"><a href="#Bootstrap-工具元件" class="headerlink" title="Bootstrap 工具元件"></a>Bootstrap 工具元件</h2><h3 id="按鈕元件"><a href="#按鈕元件" class="headerlink" title="按鈕元件"></a>按鈕元件</h3><ul>
+<li>結構與樣式分離<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;button <span class="built_in">type</span>=<span class="string">&quot;button&quot;</span> class=<span class="string">&quot;btn btn-primary&quot;</span>&gt;我是按鈕&lt;/button&gt;</span><br><span class="line">結構: .btn           =&gt; 這是按鈕(邊距, 圓角) </span><br><span class="line">樣式: .btn-primary   =&gt; 基本色彩, </span><br><span class="line">     .active        =&gt; hover, focus... 樣式</span><br><span class="line">     :hover</span><br><span class="line">      btn btn-primary =&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="元件組合規則"><a href="#元件組合規則" class="headerlink" title="元件組合規則"></a>元件組合規則</h3><h4 id="元件模組大致包含以下規則"><a href="#元件模組大致包含以下規則" class="headerlink" title="元件模組大致包含以下規則"></a>元件模組大致包含以下規則</h4><ul>
+<li>模組 (button, modal, pagination)</li>
+<li>主題 (theme colors-&gt; primary, danger…)</li>
+<li>樣式 (size, style) &#x3D;&gt; 例: 按鈕有大有小, 邊線樣式</li>
+<li>狀態 (active, disabled)<br>    按鈕</li>
+<li>模組 { 模組 }</li>
+<li>主題 { 模組 } - { 主題 }</li>
+<li>樣式 { 模組 } - { 樣式 }, { 通用類別 }</li>
+<li>狀態 { 狀態 }</li>
+</ul>
+<hr>
+<ul>
+<li><p>範例</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">&quot;btn btn-primary btn-sm disabled&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">            結構    主題       樣式    狀態</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>結構</th>
+<th>主題</th>
+<th>樣式</th>
+<th>狀態</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-btn</td>
+<td>-btn-primary</td>
+<td>btn-sm</td>
+<td>-active</td>
+</tr>
+<tr>
+<td></td>
+<td>-</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Bootstrap 中會加入大量的 Class 來套用樣式，每一個 Class 都代表了部分的結構、樣式、狀態等等…</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/training-2024-hexo/tags/%E5%89%8D%E7%AB%AF/" rel="tag"># 前端</a>
+              <a href="/training-2024-hexo/tags/bootstrap/" rel="tag"># bootstrap</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/training-2024-hexo/2024/05/30/Bootstrap%20%E8%87%AA%E8%A8%82%E8%AE%8A%E6%95%B8%E8%AA%AA%E6%98%8E/" rel="prev" title="Bootstrap 自訂變數說明">
+                  <i class="fa fa-angle-left"></i> Bootstrap 自訂變數說明
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Kobe</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/training-2024-hexo/js/comments.js"></script><script src="/training-2024-hexo/js/utils.js"></script><script src="/training-2024-hexo/js/motion.js"></script><script src="/training-2024-hexo/js/schemes/muse.js"></script><script src="/training-2024-hexo/js/sidebar.js"></script><script src="/training-2024-hexo/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
